@@ -2,7 +2,7 @@
 from consolemenu import *
 from consolemenu.items import *
 import netifaces
-
+from modules import *
 
 # def getASCII():
 #     r=""
@@ -19,18 +19,6 @@ import netifaces
 #     r+="                                    "
 #     return r
 
-menu = ConsoleMenu("NOWE", "A network overloader tool")
-
-
-default_gateways=netifaces.gateways()
-
-print(default_gateways)
-
-scan_ip = MenuItem("Find router IP")
-
-menu.append_item(scan_ip)
-
-menu.show()
 
 # import sys
 # import time

